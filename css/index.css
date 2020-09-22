@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+.nobound {
+  margin: 0%;
+  padding: 0%;
+}
+.fs {
+  width: 100%;
+  height: 100%;
+}
+/*    Mixin for perfect absolute positioning - centering    */
+.p-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.bg-setup {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-content-zooming: none;
+}
+body,
+html,
+ul,
+li {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+  color: gray !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 100%;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+body #marfeel-stats {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+  padding: 5vw;
+}
+body #marfeel-stats .marfeel-container {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  background: white;
+}
+body #marfeel-stats .marfeel-container graph-component {
+  height: auto;
+  flex: 1;
+  padding: 5vw;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component {
+  height: auto;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-donut {
+  width: 100%;
+  height: 16vw;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats {
+  margin: 0%;
+  padding: 0%;
+  height: auto;
+  padding-bottom: 0.8vw;
+  border-bottom: 1.5px rgba(0, 0, 0, 0.2) solid;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-tablet,
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-smartphone {
+  margin: 0%;
+  padding: 0%;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-tablet h2,
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-smartphone h2 {
+  margin: 0%;
+  padding: 0%;
+  font-size: 1vw;
+  font-weight: 600;
+  margin-bottom: 0.2vw;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-tablet div,
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-smartphone div {
+  font-size: 1vw;
+  font-weight: 500;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-tablet div span,
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-smartphone div span {
+  margin-left: 0.5vw;
+  opacity: 0.6;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component .graph-component-stats .gc-stats-smartphone {
+  text-align: right;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component-green .gc-stats-tablet h2 {
+  color: #86d542;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component-green .gc-stats-smartphone h2 {
+  color: #456529;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component-blue .gc-stats-tablet h2 {
+  color: #72cae5;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component-blue .gc-stats-smartphone h2 {
+  color: #305163;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component-yellow .gc-stats-tablet h2 {
+  color: #f3c534;
+}
+body #marfeel-stats .marfeel-container graph-component .graph-component-yellow .gc-stats-smartphone h2 {
+  color: #ca562f;
+}

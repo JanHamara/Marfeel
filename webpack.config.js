@@ -2,13 +2,14 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -37,5 +38,10 @@ module.exports = {
         {test: /\.(png|jpg|gif|jpeg)$/, use: 'url-loader'}
     ]
   },
-  plugins: isProduction ? [new MiniCssExtractPlugin(), new HtmlWebpackPlugin({template: './index.html'})] : [new HtmlWebpackPlugin({template: './index.html'})]
+  plugins: isProduction ? [new MiniCssExtractPlugin(), new HtmlWebpackPlugin({template: './index.html'})] 
+  : [new HtmlWebpackPlugin({template: './index.html'})],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
 };

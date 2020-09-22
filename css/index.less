@@ -13,8 +13,19 @@ box-sizing: border-box;
 @font: Arial, sans-serif;
 
 // Colors
-@main-font-color: rgb(38, 40, 97);
+@main-font-color: gray;
 @error-color: rgb(224, 49, 49);
+
+// Color Schemes
+@primary-green: rgb(134,213,66);
+@secondary-green: rgb(69,101,41);
+
+@primary-blue: rgb(114,202,229);
+@secondary-blue: rgb(48,81,99);
+
+@primary-yellow: rgb(243,197,52);
+@secondary-yellow: rgb(202,86,47);
+
 
 //------------------------------------------------------------------------------
 
@@ -80,6 +91,19 @@ box-sizing: border-box;
   text-align: @align;
 }
 
+.style-scheme (@primary: @primary-green, @secondary: @secondary-green) {
+  .gc-stats-tablet {
+    h2 {
+      color: @primary;
+    }
+  }
+  .gc-stats-smartphone {
+    h2 {
+      color: @secondary;
+    }
+  }
+}
+
 /*    Mixin for perfect absolute positioning - centering    */
 .p-center {
   .position;
@@ -128,5 +152,81 @@ body,html, ul, li {
 //-------------------------------------------------------------
 
 body {
-  background: orange;
+  .fs;
+  .nobound;
+
+  #marfeel-stats {
+    .fs;
+    .nobound;
+    padding: 5vw;
+
+    .marfeel-container {
+      .fs;
+      .nobound;
+      .display(flex);
+      background: white;
+
+      graph-component {
+        height: auto;
+        flex: 1;
+        padding: 5vw;
+        
+        .graph-component {
+          height: auto;
+
+          .graph-component-donut {
+            width: 100%;
+            height: 16vw;
+          }
+  
+          .graph-component-stats {
+            .nobound;
+            height: auto;
+            padding-bottom: 0.8vw;
+            border-bottom: 1.5px rgba(0, 0, 0, 0.2) solid;
+
+            .gc-stats-tablet, .gc-stats-smartphone {
+              .nobound;
+
+              h2 {
+                .nobound;
+                font-size: 1vw;
+                font-weight: 600;
+                margin-bottom: 0.2vw;
+              }
+
+              div {
+                font-size: 1vw;
+                font-weight: 500;
+
+                span {
+                  margin-left: 0.5vw;
+                  opacity: 0.6;
+                }
+              }
+            }
+
+            .gc-stats-smartphone {
+              .aligntext(right);
+            }
+          }
+        }
+
+        // Green Scheme
+        .graph-component-green {
+          .style-scheme;
+        }
+
+        // Blue Scheme
+        .graph-component-blue {
+          .style-scheme(@primary-blue, @secondary-blue);
+        }
+
+        // Yellow Scheme
+        .graph-component-yellow {
+          .style-scheme(@primary-yellow, @secondary-yellow);
+        }
+      }
+    }
+  }
 }
