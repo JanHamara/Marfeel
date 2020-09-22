@@ -1,0 +1,132 @@
+* {
+box-sizing: border-box;
+}
+
+//------------------------------------------------------------------------------
+
+// Vars
+
+// ------------------------------------------------------------------------------
+
+@min: 0%;
+@max: 100%;
+@font: Arial, sans-serif;
+
+// Colors
+@main-font-color: rgb(38, 40, 97);
+@error-color: rgb(224, 49, 49);
+
+//------------------------------------------------------------------------------
+
+// Media Queries
+
+// ------------------------------------------------------------------------------
+
+// Smartphone General
+@smartphone-all: ~"only screen and (max-width: 479px) and (orientation: portrait)";
+@smartphone-all-landscape: ~"only screen and (max-width: 824px) and (orientation: landscape)";
+
+// Smartphone [Sizes]
+@smartphone-small: ~"only screen and (max-width: 330px) and (orientation: portrait)";
+@smartphone: ~"only screen and (min-width: 330px) and (max-width: 400px) and (orientation: portrait)";
+@smartphone-medium: ~"only screen and (min-width: 400px) and (max-width: 410px) and (orientation: portrait)";
+@smartphone-big: ~"only screen and (min-width: 410px) and (max-width: 479px) and (orientation: portrait)";
+
+// Tablets
+@tablet-small: ~"only screen and (min-width: 760px) and (max-width: 1024px) and (orientation: portrait)";
+@tablet-big: ~"only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait)";
+@tablet-landscape: ~"only screen and (width: 1024px) and (height: 768px) and (orientation: landscape)";
+@iPad-Pro-landscape: ~"only screen and (width: 1366px) and (height: 1024px) and (orientation: landscape)";
+
+// Big Screens [ 16:9 aspect ratio ]
+@HD-screen: ~"only screen and (min-width: 1280px)"; // 1366 x 768 - common large display [W3C]
+@FullHD-screen: ~"only screen and (min-width: 1920px)"; // 1920 x 1080 - larger display [W3C]
+@QHD-screen: ~"only screen and (min-width: 2560px)"; // 2560 x 1440 - high-definition desktop display - 27” monitors and bigger
+@4K-screen: ~"only screen and (min-width: 3840px)"; // 3840 x 2160 - 4K screens
+@8K-screen: ~"only screen and (min-width: 7680px)"; // 7680 x 4800 - 8K screens
+
+//------------------------------------------------------------------------------
+
+// Animations
+
+// ------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+
+// Classes
+
+// ------------------------------------------------------------------------------
+
+.nobound {
+  margin: @min;
+  padding: @min;
+}
+
+.fs {
+  width: @max;
+  height: @max;
+}
+
+.display (@value: block) {
+  display: @value;
+}
+
+.position (@pos: absolute) {
+  position: @pos;
+}
+
+.aligntext (@align: center) {
+  text-align: @align;
+}
+
+/*    Mixin for perfect absolute positioning - centering    */
+.p-center {
+  .position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rel {
+  .position(relative);
+}
+
+.abs {
+  .position;
+}
+
+.bg-setup {
+  background-position:  center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-content-zooming: none;
+}
+
+//-------------------------------------------------------------
+
+body,html, ul, li {
+  .fs;
+  .nobound;
+  color: @main-font-color !important;
+  font-family: @font !important;
+  font-size: @max; // font-size: 100% // Needs to be defined for correct responsive resizing of text
+  font-weight: 700 !important;
+  font-style: normal !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+//-------------------------------------------------------------
+
+//                        Main CSS
+
+//-------------------------------------------------------------
+
+body {
+  background: orange;
+}
